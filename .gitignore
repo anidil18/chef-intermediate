@@ -1,2 +1,5 @@
 Notes on fixes and issues.txt
 .gitignore
+**/*.tfstate
+**/.terraform
+**/terraform.tfstate.backup
