@@ -1,0 +1,12 @@
+slack:
+  notify_channel: training
+
+pipelines:
+  - verify
+  - packer/base
+  - packer/intermediate
+
+subscriptions:
+  - workload: artifact_published:current:chefdk:*
+    actions:
+      - trigger_pipeline:packer/intermediate
