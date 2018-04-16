@@ -1,0 +1,9 @@
+steps:
+
+  - label: ":packer:"
+    command:
+      - packer validate -syntax-only workstation/base-centos-6.9/packer.json
+      - packer validate -syntax-only workstation/intermediate-centos-6.9/packer.json
+    plugins:
+      docker#v1.1.1:
+        image: "chefes/buildkite"
