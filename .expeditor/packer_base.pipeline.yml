@@ -1,2 +1,15 @@
----
-# Will be filled in later
+
+steps:
+
+  - label: ":packer: base-centos-6.9"
+    command: buildkite/workstation.sh
+    plugins:
+      docker#v1.1.1:
+        image: "chefes/buildkite"
+        environment:
+          - WORKSTATION_DIRECTORY=workstation/base-centos-6.9
+          - CHEF_CD_AWS_ACCESS_KEY_ID
+          - CHEF_CD_AWS_SECRET_ACCESS_KEY
+          - CHEF_CI_GITHUB_TOKEN
+          - TRAINING_AWS_ACCESS_KEY_ID
+          - TRAINING_AWS_SECRET_ACCESS_KEY
